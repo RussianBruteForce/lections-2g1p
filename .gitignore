@@ -1,0 +1,9 @@
+template*
+*.pdf
+*.dvi
+*.log
+*.aux
+*.gz
+*~
+*.idx
+

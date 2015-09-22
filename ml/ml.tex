@@ -1,0 +1,104 @@
+\documentclass[oneside,final,14pt]{extreport}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{mathtext}
+\usepackage{amsmath, amsfonts, amssymb} 
+\sloppy
+\begin{document}
+\title{Математическая логика и Теория Автоматов}
+
+\maketitle
+
+\chapter*{Вводный}
+Формальная теория (Исчисление):
+\begin{enumerate}
+	\item Формулы
+	\item Аксиомы
+	\item Правила синтаксического вывода
+\end{enumerate}
+Доказательством в формальной теории называется последовательность формул, каждая из которых или является аксиомой, или получается из некоторых предыдущих по одному из правил вывода. Последней стоит формула, которую нужно доказать (\textbf{теорема} или $\vdash\Phi$).
+$\vdash\Phi$ --- синтаксический вывод (дословно: доказуемая формула). Семантика \[f\colon\Phi\to\{true, false\}\].
+
+Формула называется \textbf{тождественно истинной}, если она истинна при любой интерпритации.
+$\models\Phi$ --- тождественно истинная формула.
+
+Непротиворечивость:\[If \vdash \Phi, then \vDash \Phi\]
+
+Полнота:\[If \vDash \Phi, then \vdash \Phi\]
+
+Основная задача математической логики --- разработка и анализ формальных теорий, в т. ч. проверка их на непротиворечивость и полноту.
+
+\chapter*{I раздел}
+\section*{Исчисление высказываний (ИВ)}
+\begin{itemize}
+	\item $A, B, \dots$ --- пропозиционные переменные
+	\item $\neg$ --- отрицание ("не")
+	\item $\vee$ --- конъюнкция ("и")
+	\item $\wedge$ --- дизъюнкция ("или")
+	\item $\to$--- импликация ("если \dots, то \dots")
+	\item $(),;\vdash$ --- остальные
+\end{itemize}
+Формулы:
+\begin{enumerate}
+	\item Пропозиционные переменные тоже формулы
+	\item Если $\Phi$ и $\Psi$ формулы, то:
+		\[\neg\Phi\]
+		\[(\Phi \vee \Psi)\]
+		\[(\Phi \wedge \Psi)\]
+		\[(\Phi \to \Psi)\]
+	\item $\Gamma \vdash \Phi$ --- список формул через запятую
+	\item $\Gamma \vdash$ --- список формул из $\Gamma$ противоречив
+\end{enumerate}
+
+Аксиомы --- секвенции вида $\Phi \vdash \Phi$.
+
+Доказательство в исчислении высказываний (ИВ) можно определить в виде дерева, узлы которого соответствуют правилам вывода (1-12), а ребра --- секвенции; вверху листья дерева --- аксиомы, внизу --- корень дерева (то, что нужно доказать).
+\subsection*{Правила вывода}
+\begin{enumerate}
+	\item \[
+	\cfrac{\Gamma \vdash \Phi; \Gamma \vdash \Psi}{\Gamma \vdash \Phi \wedge \Psi}
+	\]
+	\item \[
+	\cfrac{\Gamma \vdash \Phi \wedge \Psi}{\Gamma \vdash \Phi}
+	\]
+	\item \[
+	\cfrac{\Gamma \vdash \Phi \wedge \Psi}{\Gamma \vdash \Phi}
+	\]
+	\item \[
+	\cfrac{\Gamma \vdash \Phi}{\Gamma \vdash \Phi \vee \Psi}	
+	\]
+	\item \[
+	\cfrac{\Gamma \vdash \Psi}{\Gamma \vdash \Phi \vee \Psi}	
+	\]
+	\item \[
+	\cfrac{\Gamma, \Phi \vdash X; \Gamma. \Psi \vdash X; \Gamma \vdash \Phi \vee \Psi}{\Gamma \vdash X}
+	\]
+	\item \[
+	\cfrac{\Gamma, \Phi \vdash \Psi}{\Gamma \vdash \Phi \to \Psi}
+	\]
+	\item \[
+	\cfrac{\Gamma \vdash \Phi; \Gamma \vdash \Phi \to \Psi}{\Gamma \vdash \Psi}
+	\]
+	\item \[
+	\cfrac{\Gamma, \neg \Phi\vdash}{\Gamma \vdash \Phi}
+	\]
+	\item \[
+	\cfrac{\Gamma \vdash \Phi; \Gamma \vdash \neg \Phi}{\Gamma \vdash}
+	\]
+	\item \[
+	\cfrac{\Gamma_1, \Phi, \Psi, \Gamma_2 \vdash X}{\Gamma_1, \Psi, \Phi, \Gamma_2 \vdash X}
+	\]
+	\item \[
+	\cfrac{\Gamma \vdash X}{\Gamma, \Psi \vdash X}
+	\]
+	Допустимые правила вывода:
+	\item Транзитивность \[
+	\cfrac{\Gamma_1 \vdash \Phi; \Gamma_2, \Phi \vdash \Psi}{\Gamma_1 \Gamma_2 \vdash \Psi}
+	\]
+\end{enumerate}
+
+Правило вывода называется \textbf{допустимым}, если его использование не приводит к увеличению сножества используемых секвенций. \textbf{Они служат удобным сокращением фрагментов дерева доказательства.}
+
+
+\end{document}

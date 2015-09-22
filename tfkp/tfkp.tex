@@ -1,0 +1,99 @@
+\documentclass[oneside,final,14pt]{extreport}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{mathtext}
+\usepackage{amsmath, amsfonts, amssymb} 
+\sloppy
+\begin{document}
+\title{ТФКП}
+
+\maketitle
+
+\chapter*{Комплексные числа}
+
+Комплексным числом называется число $z=x+iy$, где $x,y\in \mathbb{R}$, а $i$ --- мнимая единица.
+\begin{itemize}
+	\item $i^2=-1$
+	\item $\mathbb{C}$ --- множесво комплексных чисел, комплексная плоскость, поле
+	\item $\mathbb{C} \ni \mathbb{R}$
+	\item $\operatorname{Re} z = x ; \operatorname{Im} z = y$ --- где $x$ действительная, а $y$ мнимая часть
+	\item $\overline{z}$ --- сопряженное чсило к $z = x - y \cdot i$
+	\item $\overline{z} = \operatorname{Re} z - \operatorname{Im} z \cdot i$
+	\item $|z| = r = \sqrt{x^2+y^2}$ --- модуль $z$
+	\item $\operatorname{arg} z = \phi$ -- аргумент
+	\item $\operatorname{Arg} z = \{\operatorname{arg} z + 2 \pi k; k \in \mathbb{Z}\}$
+\end{itemize}
+
+Комплексные числа удобно изображать на плоскости $\mathbb{R}^2$, и вообще --- $\mathbb{C} \sim \mathbb{R}^2$
+\[z \in \mathbb{C}, z =x + y \cdot i \longrightarrow (x,y)=\mathbb{R}\]
+
+$z = 2 - 3\cdot i; \longrightarrow |z|$ --- расстояние между $z$ и $(0,0)$, $\operatorname{arg} z$ --- угол поворота радиус-вектора $z$ относительно положительного направления $Ox$. \[\operatorname{arg} z = \frac y x \Rightarrow \phi = \arctan \frac{y}{x} \]
+
+Сложение
+\[(a+bi)+(c+di)=(a+c)+(b+d)i\]
+
+Вычитание
+\[(a+bi)-(c+di)=(a-c)+(b-d)i\]
+
+Умножение
+\[(a+bi)\cdot(c+di)=ac+bci+adi+bdi^2=(ac-bd)+(bc+ad)i\]
+
+Деление \[\frac{a+bi}{c+di}=\frac{(a+bi)(c-di)}{(c+di)(c-di)}=\frac{ac+bd}{c^2+d^2}+\left(\frac{bc-ad}{c^2+d^2}\right)i\]
+
+В частности:
+\[\frac{1}{a+bi}=\frac{a}{a^2+b^2}-\left(\frac{b}{a^2+b^2}\right)i\]
+
+\subsection*{Тригонометрическая форма}
+\[z = r(\cos \phi + i \sin \phi )  \]
+
+\subsection*{Показательная форма}
+\[z = r\epsilon^{i \phi}\]
+
+\section*{Формула Муавра}
+\[z^n = r^n (\cos n \phi + i \sin n \phi)  \]
+
+\[\sqrt[n]{z} = \sqrt[n]{r} \left( \cos \frac{\phi + 2 \pi k}{n} + i \sin \frac{\phi + 2 \pi k}{n} \right) \]
+
+\[\epsilon^{i \phi} = \cos \phi + i \sin \phi\]
+
+
+\begin{equation*}
+\left.
+\begin{aligned}
+\sin \phi &= \frac{\epsilon^{i \phi} - \epsilon^{-i \phi}}{2 i} \\
+\cos \phi &= \frac{\epsilon^{i \phi} + \epsilon^{-i \phi}}{2}
+\end{aligned}
+ \right]  \normalfont{Eyler} f
+\end{equation*}
+
+\[ \cos i z = \operatorname{ch} z \]
+\[ \sin i z = i \operatorname{sh} z \]
+
+\[z + \infty = +\infty \]\[z \cdot \infty = +\infty \]
+\[ \left. \frac{z}{\infty} = 0; \right. \frac{z}{0} = \infty \]
+
+\section*{Функуции Комплексного Переменного}
+\[f (z) \colon \mathbb{C} \to \mathbb{C} \]
+\begin{itemize}
+	\item $|z| = 1$ --- окружность радиуса 1
+	\item $|z - z_0| = R$ --- окружность радиуса $R$ с центром в точке $z_0$
+	\item $|z| \le 1$ --- закрашеная окружность
+	\item $|z - z_0| \l R$  --- внутренность окружности
+	\item $|z - z_0| > R$ --- внешность окружности 
+	
+	\textbf{При черчении не входящая граница отмечается пунктиром!}
+	
+	\item $\operatorname{arg} z = \frac \pi 4$ --- луч
+	\item $\operatorname{arg} z \le \frac \pi 4$ --- луч и всё до $Ox$
+	\item $f(z) = a z + b$ --- линейная функция
+	\item $|a z| = |a| |z|$ --- умножение комплексных чисел
+	\item При $a > 1$ плоскость растягивается, $a < 1$ --- сжимается
+	\item $\operatorname{arg} a z = \operatorname{arg} a + \operatorname{arg} z$
+	Таким образом $a z$ осуществляет сжатие или растяжение проскости в $|a|$ раз и поворот на угол $\operatorname{arg} a$
+	\item $a z + b$ осуществляет параллельный перенос на вектор $\overrightarrow{b}$
+\end{itemize}
+
+	
+
+\end{document}
